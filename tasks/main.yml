@@ -1,0 +1,10 @@
+---
+
+- name: Install serial communication programs
+  apt:
+    pkg: "{{ serial_packages }}"
+    state: present
+
+- name: Configure minicom
+  include_tasks: minicom.yml
+  when: "minicom_minirc | length >= 1"

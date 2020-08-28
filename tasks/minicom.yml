@@ -1,0 +1,10 @@
+---
+
+- name: Configure minicom minirc files
+  template:
+    src: minirc
+    dest: "/etc/minicom/minirc.{{ item.name }}"
+    mode: "u=rw,g=r,o=r"
+  loop: "{{ minicom_minirc }}"
+  loop_control:
+    label: "{{ item.name }}"
