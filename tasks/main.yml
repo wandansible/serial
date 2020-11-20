@@ -6,5 +6,6 @@
     state: present
 
 - name: Configure minicom
-  include_tasks: minicom.yml
+  include_tasks:
+    file: minicom.yml
   when: "minicom_minirc | length >= 1"
