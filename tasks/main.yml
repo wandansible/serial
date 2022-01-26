@@ -6,6 +6,6 @@
     state: present
 
 - name: Configure minicom
-  include_tasks:
+  ansible.builtin.import_tasks:
     file: minicom.yml
   when: "minicom_minirc | length >= 1"
