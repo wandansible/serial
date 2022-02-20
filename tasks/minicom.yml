@@ -1,7 +1,7 @@
 ---
 
 - name: Configure minicom minirc files
-  template:
+  ansible.builtin.template:
     src: minirc
     dest: "/etc/minicom/minirc.{{ item.name }}"
     mode: "u=rw,g=r,o=r"

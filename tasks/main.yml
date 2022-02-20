@@ -1,7 +1,7 @@
 ---
 
 - name: Install serial communication programs
-  apt:
+  ansible.builtin.apt:
     pkg: "{{ serial_packages }}"
     state: present
 
