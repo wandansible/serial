@@ -1,0 +1,36 @@
+---
+argument_specs:
+  main:
+    short_description: Manage serial terminal server
+    description: |
+      Install packages for a serial terminal server and
+      configure Minicom profiles for devices connected over serial.
+    options:
+      serial_packages:
+        description: List of packages to install
+        type: list
+        elements: str
+        default:
+          - minicom
+          - picocom
+
+      minicom_minirc:
+        description: List of serial devices to manage
+        type: list
+        elements: dict
+        options:
+          name:
+            description: Name of the device
+            type: str
+            required: true
+          port:
+            description: Path to serial device
+            type: str
+            required: true
+          baudrate:
+            description: Serial device baudrate
+            type: int
+            required: true
+          extra:
+            description: Extra minicom options
+            type: str

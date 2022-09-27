@@ -4,14 +4,4 @@ serial_packages:
   - "minicom"
   - "picocom"
 
-# List of dicts with serial devices to manage.
-# The dicts must have the following structure:
-# {
-#   name: <name>            # Name of the device (required)
-#   port: <port>            # Path to serial device (required)
-#   baudrate: <baudrate>    # Serial device baudrate (required)
-#   extra: |                # String with extra minicom options
-#     <option1>
-#     <optionN>
-# }
 minicom_minirc: []
