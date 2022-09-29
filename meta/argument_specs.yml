@@ -1,7 +1,7 @@
 ---
 argument_specs:
   main:
-    short_description: Manage serial terminal server
+    short_description: Manage a serial terminal server
     description: |
       Install packages for a serial terminal server and
       configure Minicom profiles for devices connected over serial.
