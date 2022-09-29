@@ -1,0 +1,35 @@
+---
+- name: Converge
+  hosts: all
+  tasks:
+    - name: "Include wandansible.serial"
+      ansible.builtin.include_role:
+        name: "wandansible.serial"
+      vars:
+        minicom_minirc:
+          - name: router
+            port: /dev/ttyS1
+            baudrate: 9600
+            extra: |
+              pu scriptprog       /usr/bin/runscript
+              pu minit
+              pu mreset
+              pu mdialpre
+              pu mdialsuf
+              pu mdialpre2
+              pu mdialsuf2
+              pu mdialpre3
+              pu mdialsuf3
+              pu mconnect
+              pu mnocon1
+              pu mnocon2
+              pu mnocon3
+              pu mnocon4
+              pu mhangup
+              pu mdialcan
+              pu mdialtime        0
+              pu mrdelay          0
+              pu mretries         o
+              pu mdropdtr         0
+              pu multiline        No
+              pu rtscts           No
